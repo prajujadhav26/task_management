@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "63252c4afb25875de3566fa1"
+  },
+  "roleid": {
+    "$oid": "632513d9f80496af6c81fb59"
+  },
+  "name": "Prajakta",
+  "email": "manager@gmail.com",
+  "password": "123456",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63252ca6fb25875de3566fac"
+  },
+  "roleid": {
+    "$oid": "63252b1cf70ebbc7f125078a"
+  },
+  "name": "Rupali",
+  "email": "teamleader@gmail.com",
+  "password": "987654",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63252ccdfb25875de3566fb1"
+  },
+  "roleid": {
+    "$oid": "632513ecf80496af6c81fb5c"
+  },
+  "name": "Shubham",
+  "email": "employee@gmail.com",
+  "password": "567890",
+  "__v": 0
+}]

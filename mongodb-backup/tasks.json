@@ -1,0 +1,40 @@
+[{
+  "_id": {
+    "$oid": "6324bc8f32b49e3d60c8c9c5"
+  },
+  "userid": {
+    "$oid": "63252c4afb25875de3566fa1"
+  },
+  "title": "Task 1",
+  "description": "Add Routing",
+  "status": "Closed",
+  "assignedon": "2022-09-17",
+  "closedon": "2022-09-23",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632531fafb25875de356701a"
+  },
+  "userid": {
+    "$oid": "63252ca6fb25875de3566fac"
+  },
+  "title": "Task 1",
+  "description": "Changes in UI",
+  "status": "Active",
+  "assignedon": "2022-09-18",
+  "closedon": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63253824fb25875de356708a"
+  },
+  "userid": {
+    "$oid": "63252ca6fb25875de3566fac"
+  },
+  "title": "Task 2",
+  "description": "Add components",
+  "status": "Closed",
+  "assignedon": "2022-09-17",
+  "closedon": "2022-09-24",
+  "__v": 0
+}]

@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "632513d9f80496af6c81fb59"
+  },
+  "name": "Manager",
+  "rolepermission": true,
+  "userpermission": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632513ecf80496af6c81fb5c"
+  },
+  "name": "Employee",
+  "rolepermission": false,
+  "userpermission": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63252b1cf70ebbc7f125078a"
+  },
+  "name": "Team Leader",
+  "rolepermission": false,
+  "userpermission": true,
+  "__v": 0
+}]
