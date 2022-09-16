@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 mt-3">
+      <h1>Users List</h1>
+    </div>
+    <div class="col-lg-2 mt-4">
+      <button class="btn btn-success" type="submit" routerLink="adduser/0">Add User</button>
+    </div>
+  </div>
+</div>
+
+<div class="container table-responsive py-3 cursor-pointer">
+  <table class="table table-bordered table-hover text-center">
+    <thead class="bg-dark text-white text-center">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Role</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userDetails">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <td>{{user.roleid.name}}</td>
+        <td><i class="fa fa-trash bg-danger text-white" aria-hidden="true" (click)="Delete(user._id)"></i> &nbsp;
+          <i class="fa fa-edit bg-primary text-white" (click)="Edit(user._id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,55 @@
+<div class="container" *ngIf="userForm">
+  <form [formGroup]="userForm" (ngSubmit)="onClickSave(userForm.value)">
+    <input type="hidden" formControlName="id" />
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-5 mt-5">
+        <label class="title">Name:-</label>
+        <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required || f.name.touched">Email is required
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 mt-5">
+        <label class="title">Email:-</label>
+        <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required || f.email.touched">Email is required
+          </div>
+          <div *ngIf="f.email.errors.email">Email is invalid</div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-5 mt-4">
+        <label class="title">Password-</label>
+        <input type="password" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 mt-4">
+        <label class="title">Select Role</label>
+        <select class="form-select" aria-label="Default select example" formControlName="roleid" [ngClass]="{ 'is-invalid': submitted && f.roleid.errors }">
+          <option value="">Role</option>
+          <option *ngFor="let role of rolesList" value="{{role._id}}">{{role.name}}</option>
+        </select>
+        <div *ngIf="submitted && f.roleid.errors" class="invalid-feedback">
+          <div *ngIf="f.roleid.errors.required || f.roleid.touched">Email is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-1">
+        <button class="btn btn-success mt-4" type="submit">Save</button>
+      </div>
+      <div class="col-lg-1">
+        <button class="btn btn-danger mt-4" type="submit" routerLink="/users">Close</button>
+      </div>
+    </div>
+  </form>
+</div>

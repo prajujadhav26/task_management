@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 mt-5">
+      <h1>Task List</h1>
+    </div>
+    <div class="col-lg-3 mt-4">
+      <label class="title">Select User</label>
+      <select class="form-select" aria-label="Default select example" [(ngModel)]="userid" (change)="bind()">
+        <option value="">Users</option>
+        <option *ngFor="let user of usersList" value="{{user._id}}">{{user.name}}</option>
+      </select>
+    </div>
+    <div class="col-lg-2 mt-5">
+      <button class="btn btn-primary" (click)="addTask('id === 0')">Add Task</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="container table-responsive py-4 cursor-pointer">
+      <table class="table table-bordered table-hover text-center">
+        <thead class="bg-dark text-white text-center">
+          <tr>
+            <th scope="col">User</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Assigned On</th>
+            <th scope="col">Status</th>
+            <th scope="col">Closed On</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let task of taskListDetails">
+            <td>{{task.userid.name}}</td>
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.assignedon}}</td>
+            <td>{{task.status}}</td>
+            <td>{{task.closedon}}</td>
+            <td><i class="fa fa-trash bg-danger text-white" aria-hidden="true" (click)="Delete(task._id)"></i> &nbsp;
+              <i class="fa fa-edit bg-primary text-white" (click)="Edit(task._id)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

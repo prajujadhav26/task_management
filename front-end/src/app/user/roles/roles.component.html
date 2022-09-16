@@ -1,0 +1,49 @@
+<div class="container">
+  <form [formGroup]="roleForm" (ngSubmit)="onClickAdd(roleForm.value)">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="col-lg-7 mt-4">
+        <h1>Roles List</h1>
+      </div>
+      <div class="col-lg-3 mt-4">
+        <label class="title">Add Role Name:-</label>
+        <input type="text" class="form-control" name="name" formControlName="name">
+      </div>
+      <div class="col-lg-3 mt-4">
+        <label class="title">Role Permission:-</label>
+        <input type="checkbox" name="rolepermission" formControlName="rolepermission">
+      </div>
+      <div class="col-lg-3 mt-4">
+        <label class="title">User Permission:-</label>
+        <input type="checkbox" name="userpermission" formControlName="userpermission">
+      </div>
+
+      <div class="col-lg-2 mt-5">
+        <button class="btn btn-success">Add Role</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="container table-responsive py-4 cursor-pointer">
+  <table class="table table-bordered table-hover text-center">
+    <thead class="bg-dark text-white text-center">
+      <tr>
+        <th>Role Name</th>
+        <th>Role Permission</th>
+        <th>User Permission</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roleDetails">
+        <td>{{role.name}}</td>
+        <td>{{role.rolepermission}}</td>
+        <td>{{role.userpermission}}</td>
+        <td><i class="fa fa-trash bg-danger text-white" aria-hidden="true" (click)="Delete(role._id)"></i> &nbsp;
+          <i class="fa fa-edit bg-primary text-white pl-2" (click)="Edit(role._id)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

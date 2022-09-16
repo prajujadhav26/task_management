@@ -1,0 +1,71 @@
+<div class="container" *ngIf="addTaskForm">
+  <form [formGroup]="addTaskForm" (ngSubmit)="onClickSave(addTaskForm.value)">
+    <div class="row">
+      <input type="hidden" formControlName="id">
+      <div class="col-lg-6 mt-4">
+        <label class="title">User:-</label>
+        <select class="form-select" aria-label="Default select example" formControlName="userid" [ngClass]="{ 'is-invalid': submitted && f.userid.errors }">
+          <option value="">Users</option>
+          <option *ngFor="let user of usersList" value="{{user._id}}">{{user.name}}</option>
+        </select>
+        <div *ngIf="submitted && f.userid.errors" class="invalid-feedback">
+          <div *ngIf="f.userid.errors.required || f.userid.touched">User is required
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-4">
+        <label class="title">Title:-</label>
+        <input type="text" class="form-control" formControlName="title" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+          <div *ngIf="f.title.errors.required || f.title.touched">Title is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 mt-4">
+        <label class="title">Description:-</label>
+        <textarea class="form-control" rows="3" formControlName="description"  [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+          <div *ngIf="f.description.errors.required || f.description.touched">Description is required
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 mt-4">
+        <label class="title">Assigned On:-</label>
+        <input type="date" class="form-control" formControlName="assignedon" [ngClass]="{ 'is-invalid': submitted && f.assignedon.errors }">
+        <div *ngIf="submitted && f.assignedon.errors" class="invalid-feedback">
+          <div *ngIf="f.assignedon.errors.required || f.assignedon.touched">Date is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4">
+        <label class="title">status:-</label>
+        <input type="text" class="form-control" formControlName="status" [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
+        <div *ngIf="submitted && f.status.errors" class="invalid-feedback">
+          <div *ngIf="f.status.errors.required || f.status.touched">Status is required
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4">
+        <label class="title">Closed On:-</label>
+        <input type="date" class="form-control" formControlName="closedon">
+      </div>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-2">
+        <button class="btn btn-primary mt-4" type="submit">Add Task</button>
+      </div>
+      <div class="col-lg-1">
+        <button class="btn btn-danger mt-4" type="submit" routerLink="/tasks">Close</button>
+      </div>
+    </div>
+
+  </form>
+</div>

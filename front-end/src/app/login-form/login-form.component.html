@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center align-items-center w-100">
+  <div>
+    <h1 class="text-center">Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+      <div class="row">
+        <label for="email">Email</label>
+        <input type="email" name="email" autocomplete="off" placeholder="email@example.com" formControlName="email"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required || f.email.touched">Email is required
+          </div>
+          <div *ngIf="f.email.errors.email">Email is invalid</div>
+        </div>
+      </div>
+      <div class="row">
+        <label for="password">Password</label>
+        <input type="password" name="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.email.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+      <button type="submit">login</button>
+    </form>
+  </div>
+</div>
